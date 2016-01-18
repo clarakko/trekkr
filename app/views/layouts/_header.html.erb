@@ -1,20 +1,33 @@
-<div class="top-bar">
-  <div class="top-bar-right">
-    <% if current_user %>
-      <ul class="dropdown menu" data-dropdown-menu>
-        <li class="has-submenu">
-          <a href="#"><%= current_user.username %></a>
-          <ul class="submenu menu vertical" data-submenu>
-            <li><%= link_to 'Settings', edit_user_registration_path %></li>
-            <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
-          </ul>
-        </li>
+<div class="fixed">
+  <nav class="top-bar" data-topbar role="navigation">
+    <ul class="title-area">
+      <li class="name">
+        <h1><a href="#">Trekkr</a></h1>
+      </li>
+       <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+      <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+    </ul>
+
+    <section class="top-bar-section">
+      <!-- Right Nav Section -->
+      <ul class="right">
+        <% if current_user %>
+          <li class="has-dropdown">
+            <a href="#"><%= current_user.username %></a>
+            <ul class="dropdown">
+              <li><%= link_to 'Settings', edit_user_registration_path %></li>
+              <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
+            </ul>
+          </li>
+        <% else %>
+          <li><%= link_to 'Sign In', new_user_session_path %></li>
+        <% end %>
       </ul>
-    <% else %>
-      <ul class="menu">
-        <li><%= link_to "Sign In", new_user_session_path %></li>
-        <li><%= link_to "Join Us", new_user_registration_path %></li>
+
+      <!-- Left Nav Section -->
+      <ul class="left">
+        <li><a href="#">Left Nav Button</a></li>
       </ul>
-    <% end %>
-  </div>
+    </section>
+  </nav>
 </div>
