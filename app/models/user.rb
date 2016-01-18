@@ -5,6 +5,9 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  has_many :entries
+  has_many :challenges, through: :entries
+
   validates :username, presence: true, length: {maximum: 255},
     uniqueness: { case_sensitive: false },
     format: { with: /\A[a-zA-Z0-9]*\z/,
