@@ -24,6 +24,7 @@ class EntriesController < ApplicationController
     entry = Entry.find_by(challenge: challenge, user: current_user)
     entry.destroy
 
-    redirect_to challenge_path(challenge), notice: "You are no longer tracking this challenge."
+    flash[:notice] = "You are no longer tracking this challenge."
+    redirect_to challenge_path(challenge)
   end
 end
