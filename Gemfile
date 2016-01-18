@@ -12,7 +12,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'dotenv-rails'
-gem 'foundation-rails'
+gem 'foundation-rails', '5.5.3.2'
 
 group :development, :test do
   gem 'byebug'
