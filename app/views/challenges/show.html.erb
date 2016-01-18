@@ -1,0 +1,9 @@
+<%= render 'layouts/sidebar' if current_user %>
+<h1><%= @challenge.title %></h1>
+<h3><%= @challenge.tagline %></h3>
+<p><%= @challenge.description %></p>
+<% if @enrolled %>
+  <%= link_to 'Stop tracking this challenge.', entry_path, method: :delete, data: { confirm: 'Are you sure?' } %>
+<% else %>
+  <%= link_to 'Track this challenge!', enroll_path(@challenge), method: :post %>
+<% end %>
