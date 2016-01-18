@@ -6,7 +6,7 @@ feature "user signs in", %{
   So that I can post items and review them
 
   - [ ] I am authenticated if I specify valid (email OR username) and password
-  - [ ] I remain unauthenticated if I specify invalid (email OR username) or password
+  - [ ] I stay unauthenticated if I specify invalid email/username or password
   - [ ] I cannot sign-in again if I am already signed in
   - [ ] I am redirected to my dashboard when I successfully sign-in
 } do
