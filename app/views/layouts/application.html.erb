@@ -15,7 +15,19 @@
 
   <body>
     <%= render 'layouts/header' %>
-    <%= render 'layouts/flash' %>
-    <%= yield %>
+    <% if current_user %>
+      <div class="row full-width collapse">
+        <div class="column large-2 medium-3">
+          <%= render 'layouts/sidebar' %>
+        </div>
+        <div class="column large-10 medium-9">
+          <%= render 'layouts/flash' %>
+          <%= yield %>
+        </div>
+      </div>
+    <% else %>
+      <%= render 'layouts/flash' %>
+      <%= yield %>
+    <% end %>
   </body>
 </html>

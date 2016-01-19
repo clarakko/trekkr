@@ -1,5 +1,1 @@
-<%= render 'layouts/sidebar' if current_user %>
-<% @challenges.each do |challenge| %>
-  <h3><%= link_to challenge.title, challenge %></h3>
-  <h6><%= challenge.tagline %></h6>
-<% end %>
+<%= render @challenges %>
