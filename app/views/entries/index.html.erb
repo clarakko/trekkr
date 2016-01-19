@@ -1,5 +1,1 @@
-<%= render 'layouts/sidebar' if current_user %>
-<% @entries.each do |entry| %>
-  <h1><%= link_to entry.title, challenge_path(entry) %></h1>
-  <h3><%= entry.tagline %></h3>
-<% end %>
+<%= render @entries %>

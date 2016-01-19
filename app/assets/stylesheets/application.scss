@@ -1,0 +1,9 @@
+@import "foundation_and_overrides";
+@import "top_bar";
+@import "card";
+
+.full-width {
+  margin: 0 auto;
+  max-width: initial;
+  width: 100%;
+}

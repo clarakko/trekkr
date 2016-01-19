@@ -5,4 +5,8 @@ class Challenge < ActiveRecord::Base
   validates :title, presence: true, uniqueness: true
   validates :tagline, presence: true
   validates :description, presence: true
+
+  def to_partial_path
+    'challenges/challenge'
+  end
 end
