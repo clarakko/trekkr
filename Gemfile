@@ -32,3 +32,8 @@ group :development, :test do
   gem 'faker'
   gem 'quiet_assets'
 end
+
+group :production do
+  gem 'puma'
+  gem 'rails_12factor'
+end
