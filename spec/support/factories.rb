@@ -18,3 +18,19 @@ FactoryGirl.define do
       Get out there and do this thing! Your lungs will thank you'
   end
 end
+
+FactoryGirl.define do
+  factory :trek do
+    sequence(:title) { |n| "Doable Trek #{n}" }
+    location "Remote Mountains, NH"
+    description "This trek is pure awesome! \n
+    Go do this trek, have the time of your life!"
+  end
+end
+
+FactoryGirl.define do
+  factory :step do
+    challenge
+    trek
+  end
+end
