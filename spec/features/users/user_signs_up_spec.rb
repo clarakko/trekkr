@@ -6,12 +6,12 @@ feature "new user signs up", %{
   So that I can enroll in challenges
 
   Acceptance Criteria
-  [ ] I will create an account from the sign up page
-  [ ] I must specify a valid username
-  [ ] I must specify a valid e-mail
-  [ ] I must specify a password and confirm that password
-  [ ] I get error messages if I do not perform the above
-  [ ] I register my account and am authenticated if I specify valid information
+  [X] I will create an account from the sign up page
+  [X] I must specify a valid username
+  [X] I must specify a valid e-mail
+  [X] I must specify a password and confirm that password
+  [X] I get error messages if I do not perform the above
+  [X] I register my account and am authenticated if I specify valid information
 } do
 
   scenario "prospective user gets to sign up page from root path" do

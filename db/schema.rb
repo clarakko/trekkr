@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160118183433) do
+ActiveRecord::Schema.define(version: 20160119214518) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,6 +34,26 @@ ActiveRecord::Schema.define(version: 20160118183433) do
   add_index "entries", ["challenge_id"], name: "index_entries_on_challenge_id", using: :btree
   add_index "entries", ["user_id", "challenge_id"], name: "index_entries_on_user_id_and_challenge_id", unique: true, using: :btree
   add_index "entries", ["user_id"], name: "index_entries_on_user_id", using: :btree
+
+  create_table "steps", force: :cascade do |t|
+    t.integer  "challenge_id", null: false
+    t.integer  "trek_id",      null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "steps", ["challenge_id", "trek_id"], name: "index_steps_on_challenge_id_and_trek_id", unique: true, using: :btree
+  add_index "steps", ["challenge_id"], name: "index_steps_on_challenge_id", using: :btree
+  add_index "steps", ["trek_id"], name: "index_steps_on_trek_id", using: :btree
+
+  create_table "treks", force: :cascade do |t|
+    t.string "title",       null: false
+    t.string "location",    null: false
+    t.string "description", null: false
+  end
+
+  add_index "treks", ["location"], name: "index_treks_on_location", using: :btree
+  add_index "treks", ["title"], name: "index_treks_on_title", unique: true, using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
