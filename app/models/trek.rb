@@ -1,7 +1,6 @@
 class Trek < ActiveRecord::Base
   has_many :steps
   has_many :challenges, through: :steps
-  
   validates :title, presence: true, uniqueness: true
   validates :location, presence: true
   validates :description, presence: true

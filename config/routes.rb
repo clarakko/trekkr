@@ -7,7 +7,6 @@ Rails.application.routes.draw do
     resources :treks, only: [:index]
   end
 
-
   resources :treks, only: [:index, :show] do
   end
 

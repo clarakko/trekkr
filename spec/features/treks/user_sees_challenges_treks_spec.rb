@@ -6,12 +6,12 @@ feature "users sees challenge's treks", %{
   So that I can see how to complete a challenge
 
   Acceptance Criteria:
-  - [ ] I can see an index of challenge treks on challenge show page
-  - [ ] I can see a title, and location of the trek
+  - [X] I can see an index of challenge treks on challenge show page
+  - [X] I can see a title, and location of the trek
 } do
   let!(:challenge) { FactoryGirl.create(:challenge) }
-  let!(:trek) { FactoryGirl.create(:trek)}
-  let!(:step) { FactoryGirl.create(:step, challenge: challenge, trek: trek)}
+  let!(:trek) { FactoryGirl.create(:trek) }
+  let!(:step) { FactoryGirl.create(:step, challenge: challenge, trek: trek) }
 
   scenario "unauthenticated user sees list of challenge's treks" do
     visit root_path

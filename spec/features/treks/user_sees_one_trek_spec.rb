@@ -6,14 +6,14 @@ feature "users views single challenge", %{
   So that I can understand the nature of the trek
 
   Acceptance Criteria:
-  - [ ] I can select a trek from the trek index page
-  - [ ] I can select a trek from the challenge show trek index
-  - [ ] I can see a title, location, and description of the trek
-  - [ ] I can see which challenges are associated with the trek
+  - [X] I can select a trek from the trek index page
+  - [X] I can select a trek from the challenge show trek index
+  - [X] I can see a title, location, and description of the trek
+  - [X] I can see which challenges are associated with the trek
 } do
   let!(:trek) { FactoryGirl.create(:trek) }
   let!(:challenge) { FactoryGirl.create(:challenge) }
-  let!(:step) { FactoryGirl.create(:step, challenge: challenge, trek: trek)}
+  let!(:step) { FactoryGirl.create(:step, challenge: challenge, trek: trek) }
 
   scenario "unauthenticated user sees individual trek from index" do
     visit root_path

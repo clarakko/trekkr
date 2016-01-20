@@ -6,8 +6,8 @@ feature "authenticated user withdraws from challenge", %{
   I do not wish to continue tracking
 
   Acceptance Criteria:
-  - [ ] I can withdraw from the challenge show page
-  - [ ] I no long see challenges on my dashboard from which I withdrew
+  - [X] I can withdraw from the challenge show page
+  - [X] I no long see challenges on my dashboard from which I withdrew
 } do
   let!(:user) { FactoryGirl.create(:user) }
   let!(:challenge) { FactoryGirl.create(:challenge) }

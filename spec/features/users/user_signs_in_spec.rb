@@ -5,10 +5,10 @@ feature "user signs in", %{
   I want to sign in
   So that I can post items and review them
 
-  - [ ] I am authenticated if I specify valid (email OR username) and password
-  - [ ] I stay unauthenticated if I specify invalid email/username or password
-  - [ ] I cannot sign-in again if I am already signed in
-  - [ ] I am redirected to my dashboard when I successfully sign-in
+  - [X] I am authenticated if I specify valid (email OR username) and password
+  - [X] I stay unauthenticated if I specify invalid email/username or password
+  - [X] I cannot sign-in again if I am already signed in
+  - [X] I am redirected to my dashboard when I successfully sign-in
 } do
 
   scenario "existing user specifies a valid username and password" do

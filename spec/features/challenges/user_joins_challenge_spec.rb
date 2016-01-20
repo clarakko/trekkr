@@ -7,8 +7,8 @@ feature "authenticated user joins challenge", %{
 
   Acceptance Criteria:
   - [X] I am unauthenticated and invited to sign up if I try to join
-  - [ ] I am authenticated and join the challenge from challenge show page
-  - [ ] I am able to see which challenges I joined if I visit my dashboard
+  - [X] I am authenticated and join the challenge from challenge show page
+  - [X] I am able to see which challenges I joined if I visit my dashboard
 } do
   let!(:user) { FactoryGirl.create(:user) }
   let!(:challenge) { FactoryGirl.create(:challenge) }

@@ -6,10 +6,10 @@ feature "users sees all treks", %{
   So that I can decide which treks to participate in.
 
   Acceptance Criteria:
-  - [ ] I can see title of the trek
-  - [ ] I can see location of the trek
+  - [X] I can see title of the trek
+  - [X] I can see location of the trek
 } do
-  let!(:trek) { FactoryGirl.create(:trek)}
+  let!(:trek) { FactoryGirl.create(:trek) }
 
   scenario "unauthenticated user sees list of treks" do
     visit root_path
