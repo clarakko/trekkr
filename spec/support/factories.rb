@@ -3,8 +3,8 @@ require 'faker'
 
 FactoryGirl.define do
   factory :user do
-    username 'snusmumriken'
-    email 'snusmumriken@mumintroll.com'
+    sequence(:username) { |n| "snusmumriken#{n}" }
+    sequence(:email) { |n| "snusmumriken#{n}@mumintroll.com" }
     password 'password'
     password_confirmation 'password'
   end
@@ -32,5 +32,11 @@ FactoryGirl.define do
   factory :step do
     challenge
     trek
+  end
+end
+
+FactoryGirl.define do
+  factory :report do
+    
   end
 end

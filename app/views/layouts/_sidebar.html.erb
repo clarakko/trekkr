@@ -3,8 +3,8 @@
     <i class="material-icons">terrain</i>
     <label for="">My Challenges</label>
   </a>
+  <a href="<%= my_reports_path(current_user) %>" class="item">
+    <i class="material-icons">assignment</i>
+    <label for="">My Trail Reports</label>
+  </a>
 </div>
-
-<ul class="side-nav">
-  <li><%= link_to "My Challenges", user_entries_path(current_user) %></li>
-</ul>

@@ -1,0 +1,18 @@
+<div class="row">
+  <div class="column small-centered small-10">
+    <div class="report">
+      <span class="report-title">Trail Report</span><br>
+      Trek: <%= @report.trek.title %><br>
+      Start Date: <%= @report.starts_at.strftime('%A, %B %C') %><br>
+      Start Time: <%= @report.starts_at.strftime('%l:%M %p') %><br>
+      End Date: <%= @report.ends_at.strftime('%A, %B %C') if @report.ends_at %><br>
+      End Time: <%= @report.ends_at.strftime('%l:%M %p') if @report.ends_at %><br>
+      <%= @report.duration %>
+      <%= @report.distance %>
+      <%= @report.weather %>
+      <%= @report.conditions %>
+      <%= @report.difficulty %>
+      <%= @report.report %>
+    </div>
+  </div>
+</div>

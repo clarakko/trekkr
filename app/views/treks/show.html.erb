@@ -2,4 +2,19 @@
 <h3><%= @trek.location %></h3>
 <p><%= @trek.description %></p>
 
+<iframe width="600" height="450" frameborder="0" style="border:0"
+src="https://www.google.com/maps/embed/v1/place?q=44.2705556,-71.3033&key=AIzaSyDWySV5RUUHIOrSfk0zzU9YjvEqiVAnofE" allowfullscreen></iframe>
+
+<%= link_to 'Add Trail Report', new_trek_report_path(@trek) %>
+
+<h3>My Trail Reports</h3>
+<% @my_reports.each do |report| %>
+  <%= link_to report.starts_at, trek_report_path(@trek.id, report) %>
+<% end %>
+
+<h3>Trail Reports</h3>
+<% @reports.each do |report| %>
+  <%= link_to report.starts_at, trek_report_path(@trek.id, report) %>
+<% end %>
+
 <%= render @challenges %>
