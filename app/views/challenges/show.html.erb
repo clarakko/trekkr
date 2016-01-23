@@ -7,4 +7,14 @@
   <%= link_to 'Track this challenge!', enroll_path(@challenge), method: :post %>
 <% end %>
 
-<%= render @treks %>
+<ul class="accordion" data-accordion>
+  <% @treks.each do |trek| %>
+    <li class="accordion-navigation">
+      <a href="#panel<%= trek.id %>"><%= trek.title %> | <%= trek.location %></a>
+      <div id="panel<%= trek.id %>" class="content">
+        <%= trek.description %>
+        <%= link_to 'View this trek', trek_path(trek) %>
+      </div>
+    </li>
+  <% end %>
+</ul>

@@ -30,7 +30,7 @@ feature "users views single challenge", %{
     click_link challenge.title
     expect(page).to have_content(challenge.description)
     expect(page).to have_content(trek.title)
-    expect(page).to_not have_content(trek.description)
+    expect(page).to have_content(trek.description)
 
     click_link trek.title
     expect(page).to have_content(trek.description)

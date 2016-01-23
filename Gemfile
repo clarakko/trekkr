@@ -14,6 +14,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'dotenv-rails'
 gem 'devise'
 gem 'foundation-rails', '5.5.3.2'
+gem 'validates_timeliness', '~> 4.0'
 
 group :development, :test do
   gem 'byebug'

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160119214518) do
+ActiveRecord::Schema.define(version: 20160120200703) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,6 +34,21 @@ ActiveRecord::Schema.define(version: 20160119214518) do
   add_index "entries", ["challenge_id"], name: "index_entries_on_challenge_id", using: :btree
   add_index "entries", ["user_id", "challenge_id"], name: "index_entries_on_user_id_and_challenge_id", unique: true, using: :btree
   add_index "entries", ["user_id"], name: "index_entries_on_user_id", using: :btree
+
+  create_table "reports", force: :cascade do |t|
+    t.integer  "user_id",                    null: false
+    t.integer  "trek_id",                    null: false
+    t.datetime "starts_at",                  null: false
+    t.datetime "ends_at"
+    t.string   "duration"
+    t.integer  "duration_s"
+    t.decimal  "distance"
+    t.string   "weather"
+    t.string   "conditions"
+    t.integer  "difficulty"
+    t.boolean  "public",     default: false
+    t.text     "report",                     null: false
+  end
 
   create_table "steps", force: :cascade do |t|
     t.integer  "challenge_id", null: false
