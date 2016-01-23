@@ -37,9 +37,24 @@ end
 
 FactoryGirl.define do
   factory :report do
-    start_date DateTime.new(2015, 05, 12)
+    start_date Time.zone.parse("2015-05-12 08:00")
     report 'This is a trail report!'
     association :user, factory: :user
     association :trek, factory: :trek
+
+    factory :public_report do
+      public true
+    end
+
+    factory :full_report do
+      end_date Time.zone.parse("2015-05-12 10:00")
+      duration "02:00"
+      distance 6
+      weather "Sunny and balmy"
+      conditions "Trail was perfect"
+      difficulty 6
+      public true
+      report "Could not have been a better hike!"
+    end
   end
 end

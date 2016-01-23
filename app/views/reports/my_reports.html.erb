@@ -1,5 +1,5 @@
 <% @reports.each do |report| %>
   <p>
-    <%= report.starts_at %>
+    <%= report.starts_at.strftime("%Y-%m-%e") %>
   </p>
 <% end %>

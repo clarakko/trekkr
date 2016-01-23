@@ -5,7 +5,7 @@ Devise.setup do |config|
   require 'devise/orm/active_record'
 
   # ==> Configuration for any authentication mechanism
-  config.authentication_keys = [:login]
+  config.authentication_keys = [:email]
   config.case_insensitive_keys = [:email]
   config.strip_whitespace_keys = [:email]
   config.skip_session_storage = [:http_auth]

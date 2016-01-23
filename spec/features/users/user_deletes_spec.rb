@@ -15,11 +15,7 @@ feature "user deletes self", %{
   let!(:user) { FactoryGirl.create(:user) }
 
   before :each do
-    visit root_path
-    click_link "Sign In"
-    fill_in "Login", with: user.username
-    fill_in "Password", with: user.password
-    click_button "Sign In"
+    sign_in_as(user)
     click_on "Settings"
   end
 
@@ -31,10 +27,7 @@ feature "user deletes self", %{
 
   scenario "User cannot login after account deleted" do
     click_on "Cancel my account"
-    click_link "Sign In"
-    fill_in "Login", with: user.username
-    fill_in "Password", with: user.password
-    click_button "Sign In"
-    expect(page).to have_content("Invalid login or password")
+    sign_in_as(user)
+    expect(page).to have_content("Invalid email or password")
   end
 end

@@ -22,10 +22,10 @@ feature "new user signs up", %{
 
   scenario "prospective user correctly submits sign up form" do
     visit new_user_registration_path
-    fill_in "Username", with: "Johnny"
-    fill_in "Email", with: "johnny@appleseed.com"
-    fill_in "Password", with: "johnnygold"
-    fill_in "Password confirmation", with: "johnnygold"
+    fill_in "Username", with: "snusmumriken"
+    fill_in "Email", with: "snusmuriken@mumintroll.com"
+    fill_in "Password", with: "jagarenensling"
+    fill_in "Password confirmation", with: "jagarenensling"
     click_button "Sign Up"
     expect(page).to have_content("Welcome to Trekkr! Let's get hiking!")
   end
