@@ -15,6 +15,7 @@ gem 'dotenv-rails'
 gem 'devise'
 gem 'foundation-rails', '5.5.3.2'
 gem 'validates_timeliness', '~> 4.0'
+gem 'faker'
 
 group :development, :test do
   gem 'byebug'
@@ -30,7 +31,6 @@ group :development, :test do
   gem 'shoulda-matchers', require: false
   gem 'database_cleaner'
   gem 'poltergeist'
-  gem 'faker'
   gem 'quiet_assets'
 end
 
