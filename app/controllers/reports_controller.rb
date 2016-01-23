@@ -17,14 +17,14 @@ class ReportsController < ApplicationController
   end
 
   def create
-    # params[:report][:duration] = convert_to_seconds(params[:report][:duration])
-    @report = Report.new(report_params)
     trek = Trek.find_by(id: params[:trek_id])
+    @report = Report.new(report_params)
     @report.trek = trek
     @report.user = current_user
+    @report.duration_s = Report.convert_to_seconds(@report.duration)
     if @report.save
       flash[:notice] = "Trail Report added successfully!"
-      redirect_to trek_path(trek)
+      redirect_to trek
     else
       flash.now[:errors] = @report.errors.full_messages.join(". ")
       render :new
@@ -34,17 +34,10 @@ class ReportsController < ApplicationController
   private
 
   def report_params
-    params[:report][:duration] = Report.convert_to_seconds(params[:report][:duration])
     params.require(:report).permit(
       :user, :trek, :start_date, :start_time,
       :end_date, :end_time, :duration, :distance, :weather,
       :conditions, :difficulty, :public, :report
     )
   end
-
-  # def convert_to_seconds(str)
-  #   hours = str.split(":").first.to_i
-  #   minutes = str.split(":").last.to_i
-  #   hours * 60 * 60 + minutes * 60
-  # end
 end

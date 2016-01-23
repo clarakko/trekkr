@@ -20,8 +20,9 @@ feature "new user signs up", %{
   - [X] I get error messages if I do not perform the above
 } do
   let!(:user) { FactoryGirl.create(:user) }
-  let!(:user2) { FactoryGirl.create(:user) }
+  # let!(:user2) { FactoryGirl.create(:user) }
   let!(:trek) { FactoryGirl.create(:trek) }
+  let!(:report) { FactoryGirl.create(:report, user: user, trek: trek) }
 
   scenario "unauthenticated user cannot add report" do
     visit treks_path
@@ -45,53 +46,45 @@ feature "new user signs up", %{
     click_button "Add Trail Report"
 
     expect(current_path).to eq trek_path(trek)
-    expect(page).to have_content("2015-12-05 08:00:00")
+    expect(page).to have_content("2015-12-05")
   end
-  #
-  # scenario "invalid information is supplied" do
-  #   sign_in_as(user)
-  #   visit trek_path(trek)
-  #   click_link "Add Trail Report"
-  #   fill_in "Date", with: "Yo dude!"
-  #   fill_in "Start Time", with: "8:00"
-  #   fill_in "End Time", with: "25:00 PM"
-  #   click_button "Submit Trail Report"
-  #
-  #   expect(page).to have_content("can't be blank")
-  #   expect(page).to have_content("date invalid")
-  #   expect(page).to have_content("time invalid")
-  # end
-  #
-  # scenario "public reports can be seen by anyone" do
-  #   sign_in_as(user)
-  #   visit trek_path(trek)
-  #   click_link "Add Trail Report"
-  #   fill_in "Date", with: "2015-05-12"
-  #   fill_in "Report", with: "Oh my poor quads!"
-  #   check "Make Public"
-  #   click_button "Submit Trail Report"
-  #   click_link "Sign Out"
-  #   visit trek_path(trek)
-  #
-  #   expect(page).to have_content user.username
-  #   expect(page).to have_content "2015-05-12"
-  # end
-  #
-  # scenario "private reports can't be seen by other users" do
-  #   sign_in_as(user)
-  #   visit trek_path(trek)
-  #   click_link "Add Trail Report"
-  #   fill_in "Date", with: "2015-05-12"
-  #   fill_in "Report", with: "Oh my poor quads!"
-  #   click_button "Submit Trail Report"
-  #
-  #   expect(page).to have_content "2015-05-12"
-  #
-  #   click_link "Sign Out"
-  #   sign_in_as(user2)
-  #   visit trek_path(trek)
-  #
-  #   expect(page).to_not have_content user.username
-  #   expect(page).to_not have_content "2015-05-12"
-  # end
+
+  scenario "invalid information is supplied" do
+    sign_in_as(user)
+    visit trek_path(trek)
+    click_link "Add Trail Report"
+    fill_in "Duration", with: "Yah"
+    click_button "Add Trail Report"
+
+    expect(page).to have_content("can't be blank")
+    expect(page).to have_content("Duration only hh:mm")
+  end
+
+  scenario "public reports can be seen by anyone" do
+    sign_in_as(user)
+    visit trek_path(trek)
+    click_link "Add Trail Report"
+    fill_in "Start Date", with: "2015-05-12"
+    fill_in "Report", with: "Oh my poor quads!"
+    check "Make Public?"
+    click_button "Add Trail Report"
+    click_link "Sign Out"
+    visit trek_path(trek)
+
+    expect(page).to have_content user.username
+    expect(page).to have_content "2015-05-12"
+  end
+
+  scenario "private reports can't be seen by other users" do
+    # sign_in_as(user)
+    # visit trek_path(trek)
+    # expect(page).to have_content report.starts_at.strftime("%Y-%m-%e")
+    #
+    # click_link "Sign Out"
+    # sign_in_as(user2)
+    # visit trek_path(trek)
+
+    # expect(page).to_not have_content user.username
+    # expect(page).to_not have_content report.starts_at.strftime("%Y-%m-%e")
+  end
 end

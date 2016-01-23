@@ -40,7 +40,8 @@ ActiveRecord::Schema.define(version: 20160120200703) do
     t.integer  "trek_id",                    null: false
     t.datetime "starts_at",                  null: false
     t.datetime "ends_at"
-    t.integer  "duration"
+    t.string   "duration"
+    t.integer  "duration_s"
     t.decimal  "distance"
     t.string   "weather"
     t.string   "conditions"

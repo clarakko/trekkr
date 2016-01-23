@@ -37,6 +37,9 @@ end
 
 FactoryGirl.define do
   factory :report do
-    
+    start_date DateTime.new(2015, 05, 12)
+    report 'This is a trail report!'
+    association :user, factory: :user
+    association :trek, factory: :trek
   end
 end

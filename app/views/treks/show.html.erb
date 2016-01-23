@@ -9,12 +9,14 @@ src="https://www.google.com/maps/embed/v1/place?q=44.2705556,-71.3033&key=AIzaSy
 
 <h3>My Trail Reports</h3>
 <% @my_reports.each do |report| %>
-  <%= link_to report.starts_at, trek_report_path(@trek.id, report) %>
+  <%= link_to report.starts_at.strftime("%Y-%m-%e"), trek_report_path(@trek.id, report) %>
+  <%= report.user.username %>
 <% end %>
 
 <h3>Trail Reports</h3>
 <% @reports.each do |report| %>
   <%= link_to report.starts_at, trek_report_path(@trek.id, report) %>
+  <%= report.user.username %>
 <% end %>
 
 <%= render @challenges %>

@@ -5,7 +5,8 @@ class CreateReport < ActiveRecord::Migration
       t.belongs_to :trek, null: false
       t.datetime :starts_at, null: false
       t.datetime :ends_at
-      t.integer :duration
+      t.string :duration
+      t.integer :duration_s
       t.decimal :distance
       t.string :weather
       t.string :conditions

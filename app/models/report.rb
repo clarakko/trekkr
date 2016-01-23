@@ -1,5 +1,5 @@
 class Report < ActiveRecord::Base
-  attr_accessor :start_date, :start_time, :end_date, :end_time
+  attr_accessor :start_date, :start_time, :end_date, :end_time, :duration_s
   before_validation :set_start_date_time, :set_end_date_time
 
   belongs_to :user
@@ -7,13 +7,15 @@ class Report < ActiveRecord::Base
 
   validates :user, presence: true
   validates :trek, presence: true
-
   validates :starts_at, presence: true
   validates_datetime :starts_at
-  validates_datetime :ends_at, after: :starts_at, allow_blank: true
-  # validates_time :duration, allow_nil: true
+  validates_datetime :ends_at, after: :starts_at, allow_nil: true
+  validates :duration_s, numericality: true, allow_nil: true
+  validates :duration, format: { with: /\A\d{2}:\d{2}\z/,
+    message: "only hh:mm" }, allow_blank: true
   validates :distance, numericality: true, allow_nil: true
-  validates :difficulty, numericality: { greater_than_or_equal_to: 1, less_than_or_equal_to: 10 }, allow_nil: true
+  validates :difficulty, numericality: { greater_than_or_equal_to: 1,
+    less_than_or_equal_to: 10 }, allow_nil: true
   validates :public, inclusion: { in: [true, false] }
   validates :report, presence: true
 
