@@ -21,10 +21,7 @@ feature "users sees all treks", %{
 
   scenario "authenticated user sees list of treks" do
     user = FactoryGirl.create(:user)
-    visit new_user_session_path
-    fill_in "Login", with: user.email
-    fill_in "Password", with: user.password
-    click_button "Sign In"
+    sign_in_as(user)
     click_on "Treks"
     expect(page).to have_content(trek.title)
   end
