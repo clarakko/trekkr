@@ -11,8 +11,11 @@ class Report < ActiveRecord::Base
   validates_datetime :starts_at
   validates_datetime :ends_at, after: :starts_at, allow_nil: true
   validates :duration_s, numericality: true, allow_nil: true
-  validates :duration, format: { with: /\A\d{2}:\d{2}\z/,
-    message: "only hh:mm" }, allow_blank: true
+  validates :duration,
+    format: {
+      with: /\A\d{2}:\d{2}\z/,
+      message: "only hh:mm" },
+      allow_blank: true
   validates :distance, numericality: true, allow_nil: true
   validates :difficulty, numericality: { greater_than_or_equal_to: 1,
     less_than_or_equal_to: 10 }, allow_nil: true
@@ -34,6 +37,6 @@ class Report < ActiveRecord::Base
   end
 
   def public?
-    self.public
+    public
   end
 end

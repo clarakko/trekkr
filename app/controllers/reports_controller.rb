@@ -8,7 +8,8 @@ class ReportsController < ApplicationController
   def show
     @report = Report.find(params[:id])
     unless @report.user == current_user || @report.public?
-      redirect_to new_user_session_path, notice: "You are not authorized to view this trail report."
+      redirect_to new_user_session_path, notice: "You are not authorized
+      to view this trail report."
     end
   end
 
