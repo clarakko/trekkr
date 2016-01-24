@@ -8,8 +8,8 @@
       <div class="column small-3">
         <%= f.label :start_date, "Start Date", class: "right inline" %>
       </div>
-      <div class="column small-9">
-        <%= f.date_field :start_date, required: true %>
+      <div class="column small-9 inline">
+        <%= f.datetime_select :start_date, placeholder: "YYYY-MM-DD", required: true %>
       </div>
     </div>
     <div class="row">
