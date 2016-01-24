@@ -1,5 +1,6 @@
 class ReportsController < ApplicationController
-  before_action :authenticate_user!, only: [:index, :new, :create, :my_reports]
+  before_action :authenticate_user!, only: [
+    :index, :new, :create, :update, :my_reports]
 
   def my_reports
     @reports = Report.where(user_id: current_user)
@@ -29,6 +30,26 @@ class ReportsController < ApplicationController
     else
       flash.now[:errors] = @report.errors.full_messages.join(". ")
       render :new
+    end
+  end
+
+  def edit
+    @report = Report.find(params[:id])
+    @trek = @report.trek
+  end
+
+  def update
+    @report = Report.find(params[:id])
+    @trek = @report.trek
+    @report.update(report_params)
+    @report.duration_s = Report.convert_to_seconds(@report.duration)
+
+    if @report.save
+      flash[:notice] = 'Trail report updated successfully'
+      redirect_to trek_path(@report.trek)
+    else
+      flash.now[:error] = @report.errors.full_messages.join(". ")
+      render :edit
     end
   end
 

@@ -3,16 +3,19 @@
     <div class="report">
       <span class="report-title">Trail Report</span><br>
       Trek: <%= @report.trek.title %><br>
-      Start Date: <%= @report.starts_at.strftime('%A, %B %C') %><br>
+      Start Date: <%= @report.starts_at.strftime('%A, %B %d') %><br>
       Start Time: <%= @report.starts_at.strftime('%l:%M %p') %><br>
-      End Date: <%= @report.ends_at.strftime('%A, %B %C') if @report.ends_at %><br>
+      End Date: <%= @report.ends_at.strftime('%A, %B %d') if @report.ends_at %><br>
       End Time: <%= @report.ends_at.strftime('%l:%M %p') if @report.ends_at %><br>
-      <%= @report.duration %>
-      <%= @report.distance %>
-      <%= @report.weather %>
-      <%= @report.conditions %>
-      <%= @report.difficulty %>
-      <%= @report.report %>
+      Duration: <%= @report.duration %><br>
+      Distance: <%= @report.distance %><br>
+      Weather: <%= @report.weather %><br>
+      Trail Conditions: <%= @report.conditions %><br>
+      Trail Difficulty: <%= @report.difficulty %><br>
+      Trail Report: <%= @report.report %><br>
+      <% if current_user == @report.user %>
+        <%= link_to 'Update', edit_report_path(@report), class: 'button' %>
+      <% end %>
     </div>
   </div>
 </div>
