@@ -21,14 +21,34 @@
           </li>
         <% else %>
           <li><%= link_to 'Sign In', new_user_session_path %></li>
-          <li><%= link_to 'Join Us', new_user_registration_path %></li>
+          <li><%= link_to 'Join Us', new_user_registration_path, data: { :'reveal-ajax' => '/users/sign_in' } %></li>
         <% end %>
       </ul>
 
       <!-- Left Nav Section -->
       <ul class="left">
+        <% if current_user %>
+          <li class="has-dropdown">
+            <%= link_to 'Challenges', challenges_path %>
+            <ul class="dropdown">
+              <li>
+                <li><%= link_to 'My Challenges', user_entries_path(current_user) %></li>
+              </li>
+            </ul>
+          </li>
+          <li class="has-dropdown">
+            <a href="#">Treks</a>
+            <ul class="dropdown">
+              <li>
+                <li><%= link_to 'All Treks', treks_path %></li>
+                <li><%= link_to 'My Trail Reports', my_reports_path(current_user) %></li>
+              </li>
+            </ul>
+          </li>
+        <% else %>
         <li><%= link_to 'Challenges', challenges_path %></li>
         <li><%= link_to 'Treks', treks_path %></li>
+        <% end %>
       </ul>
     </section>
   </nav>
