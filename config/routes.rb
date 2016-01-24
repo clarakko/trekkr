@@ -9,8 +9,10 @@ Rails.application.routes.draw do
   end
 
   resources :treks, only: [:index, :show] do
-    resources :reports, only: [:new, :create, :show]
+    resources :reports, only: [:new, :create]
   end
+
+  resources :reports, only: [:show, :edit, :update]
 
   resources :users, only: [] do
     resources :entries, only: [:index]
