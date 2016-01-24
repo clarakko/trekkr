@@ -8,7 +8,7 @@ class TreksController < ApplicationController
     @challenges = @trek.challenges
     @my_reports = Report.where(user: current_user, trek: @trek)
     @reports = Report.
-                where(trek: @trek, public: true).
-                where.not(user: current_user)
+               where(trek: @trek, public: true).
+               where.not(user: current_user)
   end
 end
