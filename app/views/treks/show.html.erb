@@ -33,6 +33,7 @@
   			<a href="#panel3" class="show-for-small-only">Trail Reports</a>
   			<div id="panel3" class="content">
   				<div class="content-box section-box">
+            <%= link_to 'Add Trail Report', new_trek_report_path(@trek) %>
     				<% @my_reports.each do |report| %>
               <%= link_to report.starts_at.strftime("%Y-%m-%d"), report_path(report) %>
             <% end %>
@@ -45,7 +46,11 @@
   			<a href="#panel4" class="show-for-small-only">Challenges</a>
   			<div id="panel4" class="content">
   				<div class="content-box section-box">
-    				<%= render @challenges %>
+            <div class="row">
+              <div class="column">
+                <%= render @challenges %>
+              </div>
+            </div>
           </div>
   			</div>
   		</li>

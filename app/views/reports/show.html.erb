@@ -3,14 +3,12 @@
     <div class="report">
       <div class="report-title">
         <h1>Trail Report</h1>
+      </div>
+      <div class="report-trek">
         <h3><%= @report.trek.title %></h3>
       </div>
 
       <table>
-        <tr>
-          <th>Trek</th>
-          <td><%= @report.trek.title %></td>
-        </tr>
         <tr>
           <th>Start Date</th>
           <td><%= @report.starts_at.strftime('%A, %B %d') %></td>
@@ -19,18 +17,39 @@
           <th>Start Time</th>
           <td><%= @report.starts_at.strftime('%l:%M %p') %></td>
         </tr>
+        <tr>
+          <th>End Date</th>
+          <td><%= @report.ends_at.strftime('%A, %B %d') if @report.ends_at %></td>
+        </tr>
+        <tr>
+          <th>End Time</th>
+          <td><%= @report.ends_at.strftime('%l:%M %p') if @report.ends_at %></td>
+        </tr>
+        <tr>
+          <th>Duration</th>
+          <td><%= @report.duration %></td>
+        </tr>
+        <tr>
+          <th>Distance</th>
+          <td><%= @report.distance %></td>
+        </tr>
+        <tr>
+          <th>Trail Difficulty</th>
+          <td><%= @report.difficulty %></td>
+        </tr>
+        <tr>
+          <th>Trail Conditions</th>
+          <td><%= @report.conditions %></td>
+        </tr>
+        <tr>
+          <th>Weather</th>
+          <td><%= @report.weather %></td>
+        </tr>
+        <tr>
+          <th>Trail Report</th>
+          <td><%= @report.report %></td>
+        </tr>
       </table>
-      <span class="rlabel">Trek</span> <%= @report.trek.title %><br>
-      <span class="rlabel">Start Date</span><%= @report.starts_at.strftime('%A, %B %d') %><br>
-      <span class="rlabel">Start Time</span><%= @report.starts_at.strftime('%l:%M %p') %><br>
-      <span class="rlabel">End Date</span><%= @report.ends_at.strftime('%A, %B %d') if @report.ends_at %><br>
-      <span class="rlabel">End Time</span><%= @report.ends_at.strftime('%l:%M %p') if @report.ends_at %><br>
-      <span class="rlabel">Duration</span><%= @report.duration %><br>
-      <span class="rlabel">Distance</span><%= @report.distance %><br>
-      <span class="rlabel">Weather</span><%= @report.weather %><br>
-      <span class="rlabel">Trail Conditions</span><%= @report.conditions %><br>
-      <span class="rlabel">Trail Difficulty</span><%= @report.difficulty %><br>
-      <span class="rlabel">Trail Report</span><%= @report.report %><br>
       <% if current_user == @report.user %>
         <%= link_to 'Update', edit_report_path(@report), class: 'button' %>
       <% end %>

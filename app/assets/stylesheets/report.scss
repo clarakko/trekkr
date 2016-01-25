@@ -5,6 +5,7 @@
   // display: block;
   // float: left;
   margin-top: 2rem;
+  margin-bottom: 2rem;
   min-height: 300px;
   // position: relative;
   transition: all 0.2s ease-in-out;
@@ -14,6 +15,14 @@
   &:hover {
     box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
   }
+
+  th {
+    white-space: nowrap;
+  }
+
+  td {
+    width: 100%;
+  }
 }
 
 .report-title {
@@ -21,10 +30,11 @@
   text-align: center;
   border-top: 1px solid black;
   border-bottom: 1px solid black;
+  margin-bottom: 1rem;
+}
 
-  h3 {
-    font-size: 1.75em;
-  }
+.report-trek {
+  font-size: 1.75em;
 }
 
 .card-tag {
