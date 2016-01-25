@@ -1,21 +1,60 @@
-<h1><%= @trek.title %></h1>
-<h3><%= @trek.location %></h3>
-<p><%= @trek.description %></p>
+<div class="row">
+  <div class="column small-centered small-12 medium-10 large-8 text-center">
+    <h1><%= @trek.title %></h1>
+  </div>
+  <div class="column small-centered small-12 medium-10 large-8 text-center">
+    <h3><%= @trek.location %></h3>
+  </div>
+</div>
 
-<iframe width="600" height="450" frameborder="0" style="border:0"
-src="https://www.google.com/maps/embed/v1/place?q=44.2705556,-71.3033&key=AIzaSyDWySV5RUUHIOrSfk0zzU9YjvEqiVAnofE" allowfullscreen></iframe>
+<div class="row">
+  <div class="small-12 columns">
+    <ul class="tabs show-for-medium-up medium-block-grid-4" data-tab>
+      <li class="tab-title active"><a href="#panel1">About</a></li>
+      <li class="tab-title"><a href="#panel2">Map</a></li>
+      <li class="tab-title"><a href="#panel3">Trail Reports</a></li>
+      <li class="tab-title"><a href="#panel4">Challenges</a></li>
+    </ul>
+  	<ul class="accordion" data-accordion>
+  		<li class="accordion-navigation">
+  			<a href="#panel1" class="show-for-small-only">About</a>
+  			<div id="panel1" class="content active">
+  				<div class="content-box section-box">
+    				<p><%= @trek.description %></p>
+    			</div>
+  			</div>
+  			<a href="#panel2" class="show-for-small-only">Map</a>
+  			<div id="panel2" class="content">
+  				<div class="content-box section-box">
+            <iframe width="400" height="300" frameborder="0" style="border:0"
+            src="https://www.google.com/maps/embed/v1/place?q=44.2705556,-71.3033&key=AIzaSyDWySV5RUUHIOrSfk0zzU9YjvEqiVAnofE" allowfullscreen></iframe>
+    			</div>
+  			</div>
+  			<a href="#panel3" class="show-for-small-only">Trail Reports</a>
+  			<div id="panel3" class="content">
+  				<div class="content-box section-box">
+            <%= link_to 'Add Trail Report', new_trek_report_path(@trek) %>
+    				<% @my_reports.each do |report| %>
+              <%= link_to report.starts_at.strftime("%Y-%m-%d"), report_path(report) %>
+            <% end %>
+            <% @reports.each do |report| %>
+              <%= link_to report.starts_at.strftime("%Y-%m-%d"), report_path(report) %>
+              <%= report.user.username %>
+            <% end %>
+          </div>
+  			</div>
+  			<a href="#panel4" class="show-for-small-only">Challenges</a>
+  			<div id="panel4" class="content">
+  				<div class="content-box section-box">
+            <div class="row">
+              <div class="column">
+                <%= render @challenges %>
+              </div>
+            </div>
+          </div>
+  			</div>
+  		</li>
+  	</ul>
 
-<%= link_to 'Add Trail Report', new_trek_report_path(@trek) %>
-
-<h3>My Trail Reports</h3>
-<% @my_reports.each do |report| %>
-  <%= link_to report.starts_at.strftime("%Y-%m-%e"), report_path(report) %>
-<% end %>
-
-<h3>Trail Reports</h3>
-<% @reports.each do |report| %>
-  <%= link_to report.starts_at.strftime("%Y-%m-%e"), report_path(report) %>
-  <%= report.user.username %>
-<% end %>
-
-<%= render @challenges %>
+  </div>
+</div>

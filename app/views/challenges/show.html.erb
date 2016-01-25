@@ -1,20 +1,28 @@
-<h1><%= @challenge.title %></h1>
-<h3><%= @challenge.tagline %></h3>
-<p><%= @challenge.description %></p>
-<% if @enrolled %>
-  <%= link_to 'Stop tracking this challenge.', entry_path, method: :delete, data: { confirm: 'Are you sure?' } %>
-<% else %>
-  <%= link_to 'Track this challenge!', enroll_path(@challenge), method: :post %>
-<% end %>
-
-<ul class="accordion" data-accordion>
-  <% @treks.each do |trek| %>
-    <li class="accordion-navigation">
-      <a href="#panel<%= trek.id %>"><%= trek.title %> | <%= trek.location %></a>
-      <div id="panel<%= trek.id %>" class="content">
-        <%= trek.description %>
-        <%= link_to 'View this trek', trek_path(trek) %>
-      </div>
-    </li>
-  <% end %>
-</ul>
+<div class="row">
+  <div class="column">
+    <h1><%= @challenge.title %></h1>
+    <h3><%= @challenge.tagline %></h3>
+    <p><%= @challenge.description %></p>
+  </div>
+</div>
+<div class="row">
+  <div class="column medium-6">
+    <% if @enrolled %>
+      <%= link_to 'Stop tracking this challenge.', entry_path, method: :delete, data: { confirm: 'Are you sure?' } %>
+    <% else %>
+      <%= link_to 'Track this challenge!', enroll_path(@challenge), method: :post %>
+    <% end %>
+    <ul class="accordion" data-accordion>
+      <% @treks.each do |trek| %>
+        <li class="accordion-navigation">
+          <a href="#panel<%= trek.id %>"><%= trek.title %></a>
+          <div id="panel<%= trek.id %>" class="content">
+            <%= trek.location %><br><br>
+            <%= trek.description %><br><br>
+            <%= link_to 'View this trek', trek_path(trek) %>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>

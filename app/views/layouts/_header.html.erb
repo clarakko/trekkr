@@ -21,7 +21,7 @@
           </li>
         <% else %>
           <li><%= link_to 'Sign In', new_user_session_path %></li>
-          <li><%= link_to 'Join Us', new_user_registration_path %></li>
+          <li><%= link_to 'Join Us', new_user_registration_path, data: { :'reveal-ajax' => '/users/sign_in' } %></li>
         <% end %>
       </ul>
 
@@ -29,6 +29,10 @@
       <ul class="left">
         <li><%= link_to 'Challenges', challenges_path %></li>
         <li><%= link_to 'Treks', treks_path %></li>
+        <% if current_user %>
+          <li><%= link_to 'My Challenges', user_entries_path(current_user) %></li>
+          <li><%= link_to 'My Trail Reports', my_reports_path(current_user) %></li>
+        <% end %>
       </ul>
     </section>
   </nav>

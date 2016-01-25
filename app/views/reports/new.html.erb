@@ -1,102 +1,108 @@
-<h2>Trail Report</h2>
-
-
-<%= form_for @report, url: trek_reports_path do |f| %>
 <div class="row">
-  <div class="column small-8">
-    <div class="row">
-      <div class="column small-3">
-        <%= f.label :start_date, "Start Date", class: "right inline" %>
+  <div class="column small-centered medium-10">
+    <div class="report">
+      <div class="report-title">
+        <h1>New Trail Report</h1>
       </div>
-      <div class="column small-9">
-        <%= f.date_field :start_date, required: true %>
+      <%= form_for @report, url: trek_reports_path do |f| %>
+      <div class="row">
+        <div class="column small-8">
+          <div class="row">
+            <div class="column small-3">
+              <%= f.label :start_date, "Start Date", class: "right inline" %>
+            </div>
+            <div class="column small-9 inline">
+              <%= f.date_field :start_date, placeholder: "YYYY-MM-DD", required: true %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="column small-3">
+              <%= f.label :start_time, "Start Time", class: "right inline" %>
+            </div>
+            <div class="column small-9">
+              <%= f.time_field :start_time %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="column small-3">
+              <%= f.label :end_date, "End Date", class: "right inline" %>
+            </div>
+            <div class="column small-9">
+              <%= f.date_field :end_date %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="column small-3">
+              <%= f.label :end_time, "End Time", class: "right inline" %>
+            </div>
+            <div class="column small-9">
+              <%= f.time_field :end_time %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="column small-3">
+              <%= f.label :duration, class: "right inline" %>
+            </div>
+            <div class="column small-9">
+              <%= f.text_field :duration %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="column small-3">
+              <%= f.label :distance, class: "right inline" %>
+            </div>
+            <div class="column small-9">
+              <%= f.text_field :distance %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="column small-3">
+              <%= f.label :weather, class: "right inline" %>
+            </div>
+            <div class="column small-9">
+              <%= f.text_field :weather %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="column small-3">
+              <%= f.label :conditions, "Trail Conditions", class: "right inline" %>
+            </div>
+            <div class="column small-9">
+              <%= f.text_field :conditions %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="column small-3">
+              <%= f.label :difficulty, "Trail Difficulty", class: "right inline" %>
+            </div>
+            <div class="column small-9">
+              <%= f.number_field :difficulty, in: 1..10 %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="column small-3">
+              <%= f.label :public, "Make Public?", class: "right inline" %>
+            </div>
+            <div class="column small-9">
+              <%= f.check_box :public %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="column small-3">
+              <%= f.label :report, "Trail Report", class: "right inline" %>
+            </div>
+            <div class="column small-9">
+              <%= f.text_area :report %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="column small-3 small-offset-3">
+              <%= f.submit "Add Trail Report", class: "button" %>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="row">
-      <div class="column small-3">
-        <%= f.label :start_time, "Start Time", class: "right inline" %>
-      </div>
-      <div class="column small-9">
-        <%= f.time_field :start_time %>
-      </div>
-    </div>
-    <div class="row">
-      <div class="column small-3">
-        <%= f.label :end_date, "End Date", class: "right inline" %>
-      </div>
-      <div class="column small-9">
-        <%= f.date_field :end_date %>
-      </div>
-    </div>
-    <div class="row">
-      <div class="column small-3">
-        <%= f.label :end_time, "End Time", class: "right inline" %>
-      </div>
-      <div class="column small-9">
-        <%= f.time_field :end_time %>
-      </div>
-    </div>
-    <div class="row">
-      <div class="column small-3">
-        <%= f.label :duration, class: "right inline" %>
-      </div>
-      <div class="column small-9">
-        <%= f.text_field :duration %>
-      </div>
-    </div>
-    <div class="row">
-      <div class="column small-3">
-        <%= f.label :distance, class: "right inline" %>
-      </div>
-      <div class="column small-9">
-        <%= f.text_field :distance %>
-      </div>
-    </div>
-    <div class="row">
-      <div class="column small-3">
-        <%= f.label :weather, class: "right inline" %>
-      </div>
-      <div class="column small-9">
-        <%= f.text_field :weather %>
-      </div>
-    </div>
-    <div class="row">
-      <div class="column small-3">
-        <%= f.label :conditions, "Trail Conditions", class: "right inline" %>
-      </div>
-      <div class="column small-9">
-        <%= f.text_field :conditions %>
-      </div>
-    </div>
-    <div class="row">
-      <div class="column small-3">
-        <%= f.label :difficulty, "Trail Difficulty", class: "right inline" %>
-      </div>
-      <div class="column small-9">
-        <%= f.number_field :difficulty, in: 1..10 %>
-      </div>
-    </div>
-    <div class="row">
-      <div class="column small-3">
-        <%= f.label :public, "Make Public?", class: "right inline" %>
-      </div>
-      <div class="column small-9">
-        <%= f.check_box :public %>
-      </div>
-    </div>
-    <div class="row">
-      <div class="column small-3">
-        <%= f.label :report, "Trail Report", class: "right inline" %>
-      </div>
-      <div class="column small-9">
-        <%= f.text_area :report %>
-      </div>
-    </div>
-    <div class="row">
-      <div class="column small-3 small-offset-3">
-        <%= f.submit "Add Trail Report", class: "button" %>
-      </div>
+      <% end %>
     </div>
   </div>
 </div>
-<% end %>
