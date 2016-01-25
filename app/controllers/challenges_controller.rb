@@ -6,10 +6,5 @@ class ChallengesController < ApplicationController
   def show
     @challenge = Challenge.find(params[:id])
     @treks = @challenge.treks
-
-    if current_user
-      @entry = Entry.find_by(user: current_user, challenge: @challenge)
-      @enrolled = true if @challenge.users.include?(current_user)
-    end
   end
 end

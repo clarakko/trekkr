@@ -2,25 +2,28 @@
   background: #fff;
   border-radius: 2px;
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-  display: block;
-  float: left;
-  margin: 1rem;
+  // display: block;
+  // float: left;
+  margin-top: 2rem;
   min-height: 300px;
-  position: relative;
+  // position: relative;
   transition: all 0.2s ease-in-out;
-  width: 100%;
-  
+  // width: 100%;
+  padding: 15px 15px 15px 15px;
+
   &:hover {
     box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
   }
 }
 
 .report-title {
-  padding: 0.5em;
+  // padding: 0.5em;
   text-align: center;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
 
   h3 {
-    font-size: 1.25em;
+    font-size: 1.75em;
   }
 }
 
@@ -31,4 +34,14 @@
     font-size: 0.875em;
     text-align: center;
   }
+}
+
+.rlabel {
+  display: inline-block;
+  text-align: right;
+  margin-right: 5px;
+  padding-right: 5px;
+  border-right: 1px solid black;
+  width: 8rem;;
+  font-weight: bold;
 }

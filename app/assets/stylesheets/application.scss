@@ -1,4 +1,5 @@
 @import "foundation_and_overrides";
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,400italic);
 @import "colors";
 @import "top_bar";
 @import "welcome";
@@ -10,4 +11,12 @@
   margin: 0 auto;
   max-width: initial;
   width: 100%;
+}
+
+body {
+  background-image: image-url("landscape-mountains-nature-sky.jpg");
+  background-position: center center fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100%;
 }
