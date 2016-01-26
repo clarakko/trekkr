@@ -16,6 +16,7 @@ gem 'devise'
 gem 'foundation-rails', '5.5.3.2'
 gem 'validates_timeliness', '~> 4.0'
 gem 'faker'
+gem 'merit'
 
 group :development, :test do
   gem 'byebug'

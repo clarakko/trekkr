@@ -1,5 +1,5 @@
 class Report < ActiveRecord::Base
-  attr_accessor :start_date, :start_time, :end_date, :end_time, :duration_s
+  attr_accessor :start_date, :start_time, :end_date, :end_time
   before_validation :set_start_date_time, :set_end_date_time
 
   belongs_to :user
