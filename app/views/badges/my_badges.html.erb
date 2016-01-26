@@ -1,0 +1,17 @@
+<ul>
+  <% current_user.badges.each do |badge| %>
+    <div class="badge-wrap">
+      <div class="badge-logo">
+        <%= image_tag("boot.png") %>
+      </div>
+      <div class="badge-text">
+        <div class="badge-title">
+          <h3><%= badge.name %></h3>
+        </div>
+        <div class="badge-description">
+          <p><%= badge.description %></p>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</ul>

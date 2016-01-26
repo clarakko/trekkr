@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root 'welcome#index'
   post 'challenges/:id/enroll' => "entries#create", as: 'enroll'
   get 'users/:user_id/reports' => "reports#my_reports", as: 'my_reports'
+  get 'users/:user_id/badges' => "badges#my_badges", as: 'my_badges'
 
   resources :challenges, only: [:index, :show] do
     resources :treks, only: [:index]

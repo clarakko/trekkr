@@ -23,7 +23,9 @@ class ReportsController < ApplicationController
     @report = Report.new(report_params)
     @report.trek = trek
     @report.user = current_user
+    @user = current_user
     @report.duration_s = Report.convert_to_seconds(@report.duration)
+
     if @report.save
       flash[:notice] = "Trail Report added successfully!"
       redirect_to trek

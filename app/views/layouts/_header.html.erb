@@ -32,6 +32,7 @@
         <% if current_user %>
           <li><%= link_to 'My Challenges', user_entries_path(current_user) %></li>
           <li><%= link_to 'My Trail Reports', my_reports_path(current_user) %></li>
+          <li><%= link_to 'My Badges', my_badges_path(current_user) %></li>
         <% end %>
       </ul>
     </section>
