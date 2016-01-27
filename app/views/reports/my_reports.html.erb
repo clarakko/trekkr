@@ -1,5 +1,29 @@
-<% @reports.each do |report| %>
-  <p>
-    <%= report.starts_at.strftime("%Y-%m-%e") %>
-  </p>
-<% end %>
+<div class="row">
+  <div class="column small-centered small-12 medium-10">
+    <div class="report">
+      <div class="report-title">
+        <h1>My Trail Reports</h1>
+      </div>
+      <div class="my-reports">
+        <table>
+          <thead>
+            <tr>
+              <th>Start Date</th>
+              <th>Trek</th>
+              <th>Report Snippet</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @reports.each do |report| %>
+              <tr>
+                <th><%= report.starts_at.strftime("%Y-%m-%e") %></th>
+                <th><%= link_to report.trek.title, trek_path(report.trek) %></th>
+                <th width="99%"><%= report.report[0..120] %></th>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

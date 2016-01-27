@@ -6,294 +6,313 @@ challenge = Challenge.create(
   description: Faker::Lorem.paragraph(5)
 )
 
+mr_prez = Challenge.create(
+  title: "Hey Mr. President",
+  tagline: "Grab all 7 peaks in the infamous Presidential Traverse",
+  description: Faker::Lorem.paragraph(5)
+)
+
+prez_traverse = Challenge.create(
+  title: "Presidential Traverse",
+  tagline: "One trek - 7 peaks. Time to grab your walking boots.",
+  description: Faker::Lorem.paragraphs(5)
+)
+
 trek1 = Trek.create(
-  title: "Climb Mount Washington",
+  title: "Mount Washington",
   location: "New Hampshire",
   description: Faker::Lorem.paragraph(5)
 )
 
 trek2 = Trek.create(
-  title: "Climb Mount Adams",
+  title: "Mount Adams",
   location: "New Hampshire",
   description: Faker::Lorem.paragraph(5)
 )
 
 trek3 = Trek.create(
-  title: "Climb Mount Jefferson",
+  title: "Mount Jefferson",
   location: "New Hampshire",
   description: Faker::Lorem.paragraph(5)
 )
 
 trek4 = Trek.create(
-  title: "Climb Mount Monroe",
+  title: "Mount Monroe",
   location: "New Hampshire",
   description: Faker::Lorem.paragraph(5)
 )
 
 trek5 = Trek.create(
-  title: "Climb Mount Madison",
+  title: "Mount Madison",
   location: "New Hampshire",
   description: Faker::Lorem.paragraph(5)
 )
 
 trek6 = Trek.create(
-  title: "Climb Mount Lafayette",
+  title: "Mount Lafayette",
   location: "New Hampshire",
   description: Faker::Lorem.paragraph(5)
 )
 
 trek7 = Trek.create(
-  title: "Climb Mount Lincoln",
+  title: "Mount Lincoln",
   location: "New Hampshire",
   description: Faker::Lorem.paragraph(5)
 )
 
 trek8 = Trek.create(
-  title: "Climb South Twin Mountain",
+  title: "South Twin Mountain",
   location: "New Hampshire",
   description: Faker::Lorem.paragraph(5)
 )
 
 trek9 = Trek.create(
-  title: "Climb Carter Dome",
+  title: "Carter Dome",
   location: "New Hampshire",
   description: Faker::Lorem.paragraph(5)
 )
 
 trek10 = Trek.create(
-  title: "Climb Mount Moosilauke",
+  title: "Mount Moosilauke",
   location: "New Hampshire",
   description: Faker::Lorem.paragraph(5)
 )
 
 trek11 = Trek.create(
-  title: "Climb Mount Eisenhower",
+  title: "Mount Eisenhower",
   location: "New Hampshire",
   description: Faker::Lorem.paragraph(5)
 )
 
 trek12 = Trek.create(
-  title: "Climb North Twin Mountain",
+  title: "North Twin Mountain",
   location: "New Hampshire",
   description: Faker::Lorem.paragraph(5)
 )
 
 trek13 = Trek.create(
-  title: "Climb Mount Carrigain",
+  title: "Mount Carrigain",
   location: "New Hampshire",
   description: Faker::Lorem.paragraph(5)
 )
 
 trek14 = Trek.create(
-  title: "Climb Mount Bond",
+  title: "Mount Bond",
   location: "New Hampshire",
   description: Faker::Lorem.paragraph(5)
 )
 
 trek15 = Trek.create(
-  title: "Climb Middle Carter Mountain",
+  title: "Middle Carter Mountain",
   location: "New Hampshire",
   description: Faker::Lorem.paragraph(5)
 )
 
 trek16 = Trek.create(
-  title: "Climb West Bond",
+  title: "West Bond",
   location: "New Hampshire",
   description: Faker::Lorem.paragraph(5)
 )
 
 trek17 = Trek.create(
-  title: "Climb Mount Garfield",
+  title: "Mount Garfield",
   location: "New Hampshire",
   description: Faker::Lorem.paragraph(5)
 )
 
 trek18 = Trek.create(
-  title: "Climb Mount Liberty",
+  title: "Mount Liberty",
   location: "New Hampshire",
   description: Faker::Lorem.paragraph(5)
 )
 
 trek19 = Trek.create(
-  title: "Climb South Carter",
+  title: "South Carter",
   location: "New Hampshire",
   description: Faker::Lorem.paragraph(5)
 )
 
 trek20 = Trek.create(
-  title: "Climb Wildcat Mountain",
+  title: "Wildcat Mountain",
   location: "New Hampshire",
   description: Faker::Lorem.paragraph(5)
 )
 
 trek21 = Trek.create(
-  title: "Climb Mount Hancock",
+  title: "Mount Hancock",
   location: "New Hampshire",
   description: Faker::Lorem.paragraph(5)
 )
 
 trek22 = Trek.create(
-  title: "Climb South Kinsman",
+  title: "South Kinsman",
   location: "New Hampshire",
   description: Faker::Lorem.paragraph(5)
 )
 
 trek23 = Trek.create(
-  title: "Climb Mount Field",
+  title: "Mount Field",
   location: "New Hampshire",
   description: Faker::Lorem.paragraph(5)
 )
 
 trek24 = Trek.create(
-  title: "Climb Mount Osceola",
+  title: "Mount Osceola",
   location: "New Hampshire",
   description: Faker::Lorem.paragraph(5)
 )
 
 trek25 = Trek.create(
-  title: "Climb Mount Flume",
+  title: "Mount Flume",
   location: "New Hampshire",
   description: Faker::Lorem.paragraph(5)
 )
 
 trek26 = Trek.create(
-  title: "Climb South Hancock",
+  title: "South Hancock",
   location: "New Hampshire",
   description: Faker::Lorem.paragraph(5)
 )
 
 trek27 = Trek.create(
-  title: "Climb Mount Pierce",
+  title: "Mount Pierce",
   location: "New Hampshire",
   description: Faker::Lorem.paragraph(5)
 )
 
 trek28 = Trek.create(
-  title: "Climb North Kinsman",
+  title: "North Kinsman",
   location: "New Hampshire",
   description: Faker::Lorem.paragraph(5)
 )
 
 trek29 = Trek.create(
-  title: "Climb Mount Willey",
+  title: "Mount Willey",
   location: "New Hampshire",
   description: Faker::Lorem.paragraph(5)
 )
 
 trek30 = Trek.create(
-  title: "Climb Bondcliff",
+  title: "Bondcliff",
   location: "New Hampshire",
   description: Faker::Lorem.paragraph(5)
 )
 
 trek31 = Trek.create(
-  title: "Climb Zealand Mountain",
+  title: "Zealand Mountain",
   location: "New Hampshire",
   description: Faker::Lorem.paragraph(5)
 )
 
 trek32 = Trek.create(
-  title: "Climb North Tripyramid",
+  title: "North Tripyramid",
   location: "New Hampshire",
   description: Faker::Lorem.paragraph(5)
 )
 
 trek33 = Trek.create(
-  title: "Climb Mount Cabot",
+  title: "Mount Cabot",
   location: "New Hampshire",
   description: Faker::Lorem.paragraph(5)
 )
 
 trek34 = Trek.create(
-  title: "Climb East Osceola",
+  title: "East Osceola",
   location: "New Hampshire",
   description: Faker::Lorem.paragraph(5)
 )
 
 trek35 = Trek.create(
-  title: "Climb Middle Tripyramid",
+  title: "Middle Tripyramid",
   location: "New Hampshire",
   description: Faker::Lorem.paragraph(5)
 )
 
 trek36 = Trek.create(
-  title: "Climb Cannon Mountain",
+  title: "Cannon Mountain",
   location: "New Hampshire",
   description: Faker::Lorem.paragraph(5)
 )
 
 trek37 = Trek.create(
-  title: "Climb Wildcat D",
+  title: "Wildcat D",
   location: "New Hampshire",
   description: Faker::Lorem.paragraph(5)
 )
 
 trek38 = Trek.create(
-  title: "Climb Mount Hale",
+  title: "Mount Hale",
   location: "New Hampshire",
   description: Faker::Lorem.paragraph(5)
 )
 
 trek39 = Trek.create(
-  title: "Climb Mount Jackson",
+  title: "Mount Jackson",
   location: "New Hampshire",
   description: Faker::Lorem.paragraph(5)
 )
 
 trek40 = Trek.create(
-  title: "Climb Mount Tom",
+  title: "Mount Tom",
   location: "New Hampshire",
   description: Faker::Lorem.paragraph(5)
 )
 
 trek41 = Trek.create(
-  title: "Climb Mount Moriah",
+  title: "Mount Moriah",
   location: "New Hampshire",
   description: Faker::Lorem.paragraph(5)
 )
 
 trek42 = Trek.create(
-  title: "Climb Mount Passaconaway",
+  title: "Mount Passaconaway",
   location: "New Hampshire",
   description: Faker::Lorem.paragraph(5)
 )
 
 trek43 = Trek.create(
-  title: "Climb Owl's Head Mountain",
+  title: "Owl's Head Mountain",
   location: "New Hampshire",
   description: Faker::Lorem.paragraph(5)
 )
 
 trek44 = Trek.create(
-  title: "Climb Galehead Mountain",
+  title: "Galehead Mountain",
   location: "New Hampshire",
   description: Faker::Lorem.paragraph(5)
 )
 
 trek45 = Trek.create(
-  title: "Climb Mount Whiteface",
+  title: "Mount Whiteface",
   location: "New Hampshire",
   description: Faker::Lorem.paragraph(5)
 )
 
 trek46 = Trek.create(
-  title: "Climb Mount Waumbek",
+  title: "Mount Waumbek",
   location: "New Hampshire",
   description: Faker::Lorem.paragraph(5)
 )
 
 trek47 = Trek.create(
-  title: "Climb Mount Isolation",
+  title: "Mount Isolation",
   location: "New Hampshire",
   description: Faker::Lorem.paragraph(5)
 )
 
 trek48 = Trek.create(
-  title: "Climb Mount Tecumseh",
+  title: "Mount Tecumseh",
   location: "New Hampshire",
   description: Faker::Lorem.paragraph(5)
 )
 
+trek49 = Trek.create(
+  title: "Presidential Traverse",
+  location: "New Hampshire",
+  description: Faker::Lorem.paragraph(5)
+)
+
+# White Mountain Summitter Challenge
 Step.create(challenge_id: challenge.id, trek_id: trek1.id)
 Step.create(challenge_id: challenge.id, trek_id: trek2.id)
 Step.create(challenge_id: challenge.id, trek_id: trek3.id)
@@ -342,3 +361,15 @@ Step.create(challenge_id: challenge.id, trek_id: trek45.id)
 Step.create(challenge_id: challenge.id, trek_id: trek46.id)
 Step.create(challenge_id: challenge.id, trek_id: trek47.id)
 Step.create(challenge_id: challenge.id, trek_id: trek48.id)
+
+# Hey Mr. President Challenge
+Step.create(challenge: mr_prez, trek: trek1)
+Step.create(challenge: mr_prez, trek: trek2)
+Step.create(challenge: mr_prez, trek: trek3)
+Step.create(challenge: mr_prez, trek: trek4)
+Step.create(challenge: mr_prez, trek: trek5)
+Step.create(challenge: mr_prez, trek: trek11)
+Step.create(challenge: mr_prez, trek: trek27)
+
+# Presidential Traverse
+Step.create(challenge: prez_traverse, trek: trek49)

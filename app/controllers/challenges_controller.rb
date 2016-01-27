@@ -5,7 +5,10 @@ class ChallengesController < ApplicationController
 
   def show
     @challenge = Challenge.find(params[:id])
-    @treks = @challenge.treks
+    count = @challenge.treks.count
+    half = count / 2
+    @treks_first = @challenge.treks[0...half]
+    @treks_last = @challenge.treks[half..-1]
 
     if current_user
       @entry = Entry.find_by(user: current_user, challenge: @challenge)
