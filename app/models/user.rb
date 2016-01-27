@@ -10,10 +10,12 @@ class User < ActiveRecord::Base
   has_many :challenges, through: :entries
   has_many :reports
 
-  validates :username, presence: true, length: {maximum: 255},
+  validates :username, presence: true,
+    length: { maximum: 255 },
     uniqueness: { case_sensitive: false },
     format: { with: /\A[a-zA-Z0-9]*\z/,
-    message: "may only contain letters and numbers." }
+      message: "may only contain letters and numbers."
+    }
 
   validate :validate_username
 
