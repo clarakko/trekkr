@@ -50,8 +50,9 @@
           <td><%= @report.report %></td>
         </tr>
       </table>
+      <%= link_to 'Back', trek_path(@report.trek), class: 'button tiny' %>
       <% if current_user == @report.user %>
-        <%= link_to 'Update', edit_report_path(@report), class: 'button' %>
+        <%= link_to 'Update', edit_report_path(@report), class: 'button tiny' %>
       <% end %>
     </div>
   </div>

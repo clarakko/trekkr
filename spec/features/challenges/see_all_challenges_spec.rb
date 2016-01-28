@@ -13,8 +13,6 @@ feature "users sees all challenges", %{
 
   scenario "unauthenticated user sees list of challenges" do
     visit root_path
-    expect(page).to_not have_content(challenge.title)
-    click_on "Challenges"
     expect(page).to have_content(challenge.title)
     expect(page).to have_content(challenge.tagline)
   end

@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  root 'welcome#index'
+  root 'challenges#index'
   post 'challenges/:id/enroll' => "entries#create", as: 'enroll'
   get 'users/:user_id/reports' => "reports#my_reports", as: 'my_reports'
   get 'users/:user_id/badges' => "badges#my_badges", as: 'my_badges'
