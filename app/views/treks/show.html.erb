@@ -25,53 +25,57 @@
     			<div id="panel2" class="content">
     				<div class="content-box section-box">
               <iframe width="400" height="300" frameborder="0" style="border:0"
-              src="https://www.google.com/maps/embed/v1/place?q=44.2705556,-71.3033&key=AIzaSyDWySV5RUUHIOrSfk0zzU9YjvEqiVAnofE" allowfullscreen></iframe>
+              src="https://www.google.com/maps/embed/v1/place?q=<%= @trek.lat %>,<%= @trek.lon %>&key=AIzaSyDWySV5RUUHIOrSfk0zzU9YjvEqiVAnofE" allowfullscreen></iframe>
       			</div>
     			</div>
     			<a href="#panel3" class="hide-for-large-up">Trail Reports</a>
     			<div id="panel3" class="content">
     				<div class="content-box section-box">
               <%= link_to 'Add Trail Report', new_trek_report_path(@trek) %><br><br>
-              <div class="my-reports">
-                <table>
-                  <thead>
-                    <tr>
-                      <th>Start Date</th>
-                      <th>Trek</th>
-                      <th>Report Snippet</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <% @my_reports.each do |report| %>
+              <% unless @my_reports.empty? %>
+                <div class="my-reports">
+                  <table>
+                    <thead>
                       <tr>
-                        <th><%= link_to report.starts_at.strftime("%Y-%m-%e"), report_path(report) %></th>
-                        <th><%= report.trek.title %></th>
-                        <th width="99%"><%= report.report[0..120] %></th>
+                        <th>Start Date</th>
+                        <th>Trek</th>
+                        <th>Report Snippet</th>
                       </tr>
-                    <% end %>
-                  </tbody>
-                </table>
-              </div>
-              <div class="all-reports">
-                <table>
-                  <thead>
-                    <tr>
-                      <th>Start Date</th>
-                      <th>Username</th>
-                      <th>Trek</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <% @reports.each do |report| %>
+                    </thead>
+                    <tbody>
+                      <% @my_reports.each do |report| %>
+                        <tr>
+                          <th><%= link_to report.starts_at.strftime("%Y-%m-%e"), report_path(report) %></th>
+                          <th><%= report.trek.title %></th>
+                          <th width="99%"><%= report.report[0..120] %></th>
+                        </tr>
+                      <% end %>
+                    </tbody>
+                  </table>
+                </div>
+              <% end %>
+              <% unless @reports.empty? %>
+                <div class="all-reports">
+                  <table>
+                    <thead>
                       <tr>
-                        <th><%= link_to report.starts_at.strftime("%Y-%m-%e"), report_path(report) %></th>
-                        <th><%= report.user.username %></th>
-                        <th width="99%"><%= report.trek.title %></th>
+                        <th>Start Date</th>
+                        <th>Username</th>
+                        <th>Trek</th>
                       </tr>
-                    <% end %>
-                  </tbody>
-                </table>
-              </div>
+                    </thead>
+                    <tbody>
+                      <% @reports.each do |report| %>
+                        <tr>
+                          <th><%= link_to report.starts_at.strftime("%Y-%m-%e"), report_path(report) %></th>
+                          <th><%= report.user.username %></th>
+                          <th width="99%"><%= report.trek.title %></th>
+                        </tr>
+                      <% end %>
+                    </tbody>
+                  </table>
+                </div>
+              <% end %>
             </div>
     			</div>
     			<a href="#panel4" class="hide-for-large-up">Challenges</a>
