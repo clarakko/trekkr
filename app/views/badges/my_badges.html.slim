@@ -1,0 +1,9 @@
+- current_user.badges.each do |badge|
+  .badge-wrap
+    .badge-logo
+      = image_tag 'boot.png'
+    .badge-text
+      .badge-title
+        h3= badge.name
+      .badge-description
+        p= badge.description

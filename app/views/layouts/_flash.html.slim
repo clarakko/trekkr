@@ -1,0 +1,5 @@
+.row
+  - flash.each do |key, value|
+    div data-alert="" class="alert-box radius flash #{key}"
+      = value
+      a.close href="#" &times;

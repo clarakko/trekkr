@@ -1,0 +1,18 @@
+.row
+  .column.small-centered.small-12.medium-10
+    .report
+      .report-title
+        h1 My Trail Reports
+      .my-report
+        table
+          thead
+            tr
+              th Start Date
+              th Trek
+              th Report Snippet
+          tbody
+            - @reports.each do |report|
+              tr
+                th= link_to report.starts_at.strftime("%Y-%m-%e"), report_path(report)
+                th= link_to report.trek.title, trek_path(report.trek)
+                th width="99%" = report.report[0..120]
