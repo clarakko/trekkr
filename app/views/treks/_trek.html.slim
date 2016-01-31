@@ -1,0 +1,8 @@
+.card
+  .card-image
+    = image_tag ["trk-icon-1.jpg", "trk-icon-2.jpg", "trk-icon-3.jpg", "trk-icon-4.jpg", "trk-icon-5.jpg"].sample
+  .card-content
+    .card-title
+      h3= link_to trek.title, trek
+    .card-tag
+      p= trek.location

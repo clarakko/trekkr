@@ -17,6 +17,8 @@ gem 'foundation-rails', '5.5.3.2'
 gem 'validates_timeliness', '~> 4.0'
 gem 'faker'
 gem 'merit'
+gem 'haml'
+gem 'slim'
 
 group :development, :test do
   gem 'byebug'

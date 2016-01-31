@@ -1,0 +1,8 @@
+.card
+  .card-image
+    = image_tag ["icon-1.jpg", "icon-2.jpg", "icon-3.jpg", "icon-4.jpg", "icon-5.jpg"].sample
+  .card-content
+    .card-title
+      h3= link_to challenge.title, challenge
+    .card-tag
+      p= challenge.tagline
