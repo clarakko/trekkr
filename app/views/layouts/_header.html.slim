@@ -1,0 +1,24 @@
+.fixed
+  nav class="top-bar" data-topbar="" role="navigation"
+    ul.title-area
+      li.name
+        h1
+          a href="#" Trekkr
+    section.top-bar-section
+      ul.right
+        - if current_user
+          li.has-dropdown
+            a href="#" = current_user.username
+            ul.dropdown
+              li= link_to 'Settings', edit_user_registration_path
+              li= link_to 'Sign Out', destroy_user_session_path, method: :delete
+        - else
+          li= link_to 'Sign In', new_user_session_path
+          li= link_to 'Join Us', new_user_registration_path
+      ul.left
+        li= link_to 'Challenges', challenges_path
+        li= link_to 'Treks', treks_path
+        - if current_user
+          li= link_to 'My Challenges', user_entries_path(current_user)
+          li= link_to 'My Trail Reports', my_reports_path(current_user)
+          li= link_to 'My Badges', my_badges_path(current_user)

@@ -1,0 +1,21 @@
+.row
+  .column.small-centered.medium-10
+    .report
+      .report-title
+        h1= @challenge.title
+      .report-trek
+        h3= @challenge.tagline
+      .panel
+        - if @enrolled
+          = link_to 'Stop tracking this challenge.', entry_path, method: :delete, data: { confirm: 'Are you sure?' }
+        - else
+          = link_to 'Track this challenge!', enroll_path(@challenge), method: :post
+          <br><br>
+        p= @challenge.description
+      .row
+        .column.small-12.large-6
+          ul.accordion data-accordion=""
+            = render partial: 'dropdown', collection: @treks_last, as: :trek
+        .column.small-12.large-6
+          ul.accordion data-accordion=""
+            = render partial: 'dropdown', collection: @treks_first, as: :trek

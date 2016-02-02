@@ -1,6 +1,6 @@
 class ReportsController < ApplicationController
   before_action :authenticate_user!, only: [
-    :index, :new, :create, :update, :my_reports]
+    :new, :create, :update, :my_reports]
 
   def my_reports
     @reports = Report.where(user_id: current_user)
