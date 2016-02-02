@@ -1,0 +1,8 @@
+li.accordion-navigation
+  a href="#panel#{trek.id}" #{trek.title}
+  div.content id="panel#{trek.id}"
+    = trek.location
+    <br><br>
+    = trek.description
+    <br><br>
+    = link_to 'View this trek', trek_path(trek)
